@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Otopark Kaçışı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🅿️ Otopark Kaçışı</h1>
+    <p>Tek yön okları olan bir otopark çiz. Çıkışa en kısa yasal yolu, kurallar olmasa ne kadar kısa olacağını ve girersen bir daha çıkamayacağın köşeleri göreyim.</p>
+  </header>
+
+  <main>
+    <section class="sol">
+      <div class="kart">
+        <div class="firca" role="toolbar" aria-label="Fırça">
+          <button type="button" data-c=".">Yol</button>
+          <button type="button" data-c="#">Duvar</button>
+          <button type="button" data-c="P">🚗 Park</button>
+          <button type="button" data-c=">">→</button>
+          <button type="button" data-c="<">←</button>
+          <button type="button" data-c="^">↑</button>
+          <button type="button" data-c="v">↓</button>
+          <button type="button" data-c="A">🚙 Ben</button>
+          <button type="button" data-c="C">🚪 Çıkış</button>
+        </div>
+        <canvas id="plan" width="700" height="350" aria-label="Otopark planı"></canvas>
+        <div class="alt-satir">
+          <label class="kutu"><input type="checkbox" id="kuralsiz" checked> Kurallar olmasa gideceğim yolu da göster</label>
+          <button type="button" id="sur">▶ Sür</button>
+        </div>
+        <p class="not">Bir fırça seçip hücrelere tıklıyorum ya da üstlerinde sürüklüyorum.</p>
+      </div>
+
+      <div class="kart">
+        <h2>Hazır otoparklar</h2>
+        <div class="ornekler" id="ornekler"></div>
+        <div class="izgara">
+          <label>Eni <input id="en" type="number" min="4" max="30" step="1"></label>
+          <label>Boyu <input id="boy" type="number" min="3" max="20" step="1"></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="sag">
+      <div class="kart sonuc" id="sonuc"></div>
+      <div class="kart">
+        <h2>Plan metni</h2>
+        <p class="not ust"># duvar · . yol · P park · &gt; &lt; ^ v tek yön · A ben · C çıkış. Kopyalayıp saklayabilir ya da buraya yapıştırabilirim.</p>
+        <textarea id="metin" rows="8" spellcheck="false" aria-label="Plan metni"></textarea>
+        <p class="not" id="metinNot"></p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
